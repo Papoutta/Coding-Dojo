@@ -1,0 +1,11 @@
+1) How have you noticed your bootcamp knowledge grow or change during Programming Basics?
+
+Yes, i've learned many new concepts in js and my logic is getting better.
+
+2) How have you noticed your approach to learning change throughout Programming Basics?
+
+"It helps you understand that the learning process involves more than just learning to program."
+
+3) What do you consider your "Mistake of the Week," which was a valuable failure you learned from during Programming Basics?
+
+The biggest mistake of the week was the infinite loop in questions 8 or 9 on the first exam. I intended to decrement with 'i--', but I mistakenly wrote 'i++' instead.

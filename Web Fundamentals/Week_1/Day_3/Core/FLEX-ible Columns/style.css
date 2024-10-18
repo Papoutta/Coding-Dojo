@@ -1,0 +1,27 @@
+*{
+    margin : 0px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap : 10px;
+    margin-bottom : 10px; 
+}
+
+.col{
+    background-color: #5F9FA0;
+    padding: 10px;
+    flex: 1;
+}
+.col-2{
+    background-color: #5F9FA0;
+    padding: 10px;
+    flex: 2;
+}
+
+.col-3{
+    background-color: #5F9FA0;
+    padding: 10px;
+    flex: 3;
+}

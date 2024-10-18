@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="bignav">
+        <div class="navbar">
+            <h1>DojoWeather</h1>
+            <div class="rightnav">
+                <ul>
+                    <li onclick="changedCity()">Burbank</li>
+                    <li onclick="changedCity()">Chicago</li>
+                    <li onclick="changedCity()">Dallas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Container -->
+    <div class="container">
+
+        
+
+        <!-- Main -->
+        <div class="main">
+
+            <!-- Row -->
+            <div class="row">
+                <h2>San Jose</h2>
+                <div class="temperature">
+                    <p>Show Temperature in </p>
+                    <select onchange="convert()" name="" id="">
+                        <option value="">°C</option>
+                        <option value="">°F</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr id="hr">
+
+            <!-- Cards -->
+            <div class="cards">
+
+                <!-- Card -->
+                <div class="card">
+                    <h3>Today</h3>
+                    <img src="./Images/some_rain.png" alt="rain">
+                    <p>some rain</p>
+                    <div class="tempvalues">
+                        <h2 id="f1">24</h2>
+                        <h2 id="f2">18</h2>
+                    </div>
+                </div>    
+                
+                <div class="card">
+                    <h3>Tommorow</h3>
+                    <img src="./Images/some_sun.png" alt="sun">
+                    <p>some sun</p>
+                    <div class="tempvalues">
+                        <h2 id="f3">27</h2>
+                        <h2 id="f4">19</h2>
+                    </div>
+                </div> 
+
+                <div class="card">
+                    <h3>Friday</h3>
+                    <img src="./Images/some_clouds.png" alt="clouds">
+                    <p>some clouds</p>
+                    <div class="tempvalues">
+                        <h2 id="f5">21</h2>
+                        <h2 id="f6">16</h2>
+                    </div>
+                </div> 
+
+                <div class="card">
+                    <h3>Saturday</h3>
+                    <img src="./Images/some_sun.png" alt="sun">
+                    <p>some sun</p>
+                    <div class="tempvalues">
+                        <h2 id="f7">26</h2>
+                        <h2 id="f8">21</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="cookies">
+                <img src="./Images/cookie.png" alt="">
+                <div class="cookie-title">
+                    <h3>Stop! Cookie time</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Explicabo enim fuga quo modi perferendis error maxime cumque veniam! 
+                    Tenetur sint provident aut cum. Minus ratione optio eos consectetur, 
+                    tenetur nesciunt! <span>Read more</span></p>
+                </div>
+                <button onclick="deleteCookies()">I Accept</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

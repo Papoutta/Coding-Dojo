@@ -1,0 +1,54 @@
+T diagram : Code Challenge: Return 
+
+Snippet 1 :
+output 1 : 'hello'
+output 2 : 'Dojo'
+
+Snippet 2 :
+output 1 : 'hello'
+output 2 : 'result is 15'
+
+Snippet 3 :
+num : 3
+result : 15
+
+Snippet 4 :
+num : 15
+result : 10
+result : 10
+num : 15
+
+Snippet 5 :
+num : 15
+result : 10
+result : 20
+num : 15
+
+Snippet 6 :
+num : 3
+num : 5
+result : 16
+
+Snippet 7 :
+sumNums : 5
+sumNums : 8
+
+Snippet 8 :
+num1 : 2
+num1+num2 : 5
+num1 : 3
+num1+num2 : 8
+
+Snippet 9 :
+sum : 5
+sum : 8
+result : 5
+
+Snippet 10 :
+sum : 5
+sum : 3
+sum : 6
+sum : 3
+sum : 5
+sum : 8
+result : 19

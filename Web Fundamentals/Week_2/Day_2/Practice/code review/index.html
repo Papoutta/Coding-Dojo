@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="navleft">
+                <img src="./images/cat.png" alt="cat">
+                <h1>CodeIt</h1>
+                <input id="search" type="text">
+                <button onclick="find()">Go</button>
+            </div>
+            <div class="navright">
+                <button>Get Up</button>
+                <button>Log in</button>
+            </div>
+        </div>
+
+        <!-- Subnav -->
+        <div class="subnav">
+            <img src="./images/cat.png" alt="cat">
+            <h1>c/Dojo</h1>
+            <button onclick="removeBotton(this)">Join</button>
+        </div>
+
+        <!-- Submenu -->
+        <div class="submenu">
+            <ul>
+                <li>Posts</li>
+                <li>Wiki</li>
+                <li>c/Dojo</li>
+                <li>Discord</li>
+            </ul>
+        </div>
+
+        <!-- Main -->
+        <div class="main">
+
+            <!-- Main left -->
+            <div class="mainleft">
+                <div class="post">
+                    <div class="votes">
+                        <img onclick="increase('#num1')" src="./images/up-arrow.png" alt="up arrow">
+                        <h3 id="num1">29</h3>
+                        <img onclick="decrease('num1')" src="./images/down-arrow.png" alt="down arrow">
+                    </div>
+                    <div class="content">
+                        <h2>Best of Projects Week 2022!</h2>
+                        <img src="./images/image1.webp" alt="image1">
+                        <div class="comments">
+                            <img src="./images/chat.png" alt="chat">
+                            <p>42 comments</p>
+                            <img src="./images/share.png" alt="share">
+                            <p>Share</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="votes">
+                        <img onclick="increase('#num2')" src="./images/up-arrow.png" alt="up arrow">
+                        <h3 id="num2">17</h3>
+                        <img onclick="decrease('num2')" src="./images/down-arrow.png" alt="down arrow">
+                    </div>
+                    <div class="content">
+                        <h2>I use my cat as a rubber duck, is that weird?</h2>
+                        <img src="./images/image2.webp" alt="image1">
+                        <div class="comments">
+                            <img src="./images/chat.png" alt="chat">
+                            <p>16 comments</p>
+                            <img src="./images/share.png" alt="share">
+                            <p>Share</p>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main right -->
+            <div class="mainright">
+                <div class="card">
+                    <h3>About the Dojo</h3>
+                    <p>Changing Lives with Code and a dedicated community of debuggers!</p>
+                </div>
+                <div class="card">
+                    <h3>Discord</h3>
+                    <button>discord.gg/cdojo</button>
+                </div>
+                <div class="card">
+                    <h3>c/Dojo Rules</h3>
+                    <ol>
+                        <li>Follow the 20 minutes Rule!</li>
+                        <li>Don't compare yourself to others!</li>
+                        <li>Learn Actively</li>
+                        <li>Don't chase Best Practices (yest)</li>
+                        <li>When you're behind, as ask for help</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Quiz Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .option {
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Challenging Trivia Quiz Game</h1>
+    <div class="question" id="question"></div>
+    <ul class="options" id="options"></ul>
+    <button id="nextButton" style="display: none;">Next Question</button>
+    <div id="message"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the capital of Iceland?",
+                options: ["Reykjavik", "Oslo", "Helsinki", "Copenhagen"],
+                answer: "Reykjavik"
+            },
+            {
+                question: "Which artist is known for the painting 'The Starry Night'?",
+                options: ["Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Leonardo da Vinci"],
+                answer: "Vincent van Gogh"
+            },
+            {
+                question: "What is the largest desert in the world?",
+                options: ["Sahara", "Arabian", "Gobi", "Antarctic"],
+                answer: "Antarctic"
+            },
+            {
+                question: "Which gas is most abundant in the Earth's atmosphere?",
+                options: ["Oxygen", "Hydrogen", "Nitrogen", "Carbon Dioxide"],
+                answer: "Nitrogen"
+            },
+            {
+                question: "Who was the first woman to win a Nobel Prize?",
+                options: ["Marie Curie", "Ada Lovelace", "Rosalind Franklin", "Jane Goodall"],
+                answer: "Marie Curie"
+            },
+            {
+                question: "What year did World War II end?",
+                options: ["1944", "1945", "1946", "1947"],
+                answer: "1945"
+            },
+            {
+                question: "What is the hardest natural substance on Earth?",
+                options: ["Gold", "Iron", "Diamond", "Quartz"],
+                answer: "Diamond"
+            },
+            {
+                question: "In which country is the Great Barrier Reef located?",
+                options: ["Australia", "United States", "Bahamas", "Mexico"],
+                answer: "Australia"
+            },
+        ];
+
+        let currentQuestionIndex = 0;
+
+        function loadQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            document.getElementById('question').textContent = currentQuestion.question;
+            const optionsList = document.getElementById('options');
+            optionsList.innerHTML = '';
+            currentQuestion.options.forEach(option => {
+                const li = document.createElement('li');
+                li.textContent = option;
+                li.className = 'option';
+                li.addEventListener('click', selectOption);
+                optionsList.appendChild(li);
+            });
+            document.getElementById('nextButton').style.display = 'none';
+            document.getElementById('message').textContent = '';
+        }
+
+        function selectOption(event) {
+            const selectedOption = event.target.textContent;
+            const currentQuestion = questions[currentQuestionIndex];
+            const messageDiv = document.getElementById('message');
+
+            if (selectedOption === currentQuestion.answer) {
+                messageDiv.textContent = "Correct!";
+            } else {
+                messageDiv.textContent = `Wrong! The correct answer is ${currentQuestion.answer}.`;
+            }
+            document.getElementById('nextButton').style.display = 'block';
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => option.removeEventListener('click', selectOption)); // Disable further clicks
+        }
+
+        document.getElementById('nextButton').addEventListener('click', () => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+            } else {
+                document.getElementById('question').textContent = "Quiz Over!";
+                document.getElementById('options').innerHTML = '';
+                document.getElementById('nextButton').style.display = 'none';
+                document.getElementById('message').textContent = '';
+            }
+        });
+
+        // Start the quiz
+        loadQuestion();
+    </script>
+</body>
+</html>

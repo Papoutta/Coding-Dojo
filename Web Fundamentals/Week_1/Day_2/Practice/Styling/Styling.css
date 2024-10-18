@@ -1,0 +1,22 @@
+* {
+    font-family: sans-serif;
+}
+h1{
+    color: white;
+    background-color: black;
+}
+.bleu{
+    color: aqua;
+}
+h2{
+    color: white;
+    font-style: italic;
+    background-color: rebeccapurple;
+    text-align: center;
+}
+h3{
+    color: black;
+    text-align: end;
+    background-color: rgb(172, 226, 228);
+    text-decoration: underline;
+}

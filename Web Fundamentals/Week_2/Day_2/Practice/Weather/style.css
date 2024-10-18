@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  sans-serif;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.bignav {
+    background-color: #9FC5F8;
+}
+
+.navbar {
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.rightnav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style : none ;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 5px 0px ;
+}
+
+.temperature {
+    display: flex;
+    gap: 20px;    
+}
+
+#hr {
+    border: none; 
+    height: 2px; 
+    background-color: black;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: hsl(0, 0%, 93%);
+    padding : 20px 45px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.tempvalues {
+    display: flex;
+    gap: 30px;
+}
+
+.tempvalues h2 {
+    color: blue;
+}
+
+.tempvalues h2:first-child {
+    color: red;
+}
+
+.cookies {
+    padding: 20px;
+    width: 900px;
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    gap: 40px;
+    position: fixed;
+    bottom: 0;
+    margin: 0 auto;
+}
+
+.cookies img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.cookie-title span{
+    color: blue;
+    text-decoration: underline;
+}
+
+.cookies button {
+    background-color: #9FC5F8;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    width: 250px;
+    height: 40px;
+}
