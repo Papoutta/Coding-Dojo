@@ -7,10 +7,10 @@ def countdown(a):
 print (countdown(5))
 
 # 2
-def print_and_return(a,b):
-    print(a)
-    return b
-print (print_and_return(3,5))
+def print_and_return(arr):
+    print(arr[0])
+    return arr[1]
+print (print_and_return([3,5]))
 
 #3
 sum = 0
@@ -32,10 +32,15 @@ def values_greater_than_second(arr):
 print (values_greater_than_second([6,2,1,3,5]))
 
 
-#5
+# 5
 arr = []
 def length_and_value(a,b):
     for i in range(a):
         arr.append(b)
     return arr
 print (length_and_value(5,10))
+
+#5
+def length_and_value(size,num):
+    return [num]*size
+print (length_and_value(4,7))
