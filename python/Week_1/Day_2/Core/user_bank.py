@@ -42,12 +42,6 @@ class User:
         self.age = age
         self.account=BankAccount(0.05,1000)
 
-    def user_account(self, name):
-        if name = "farouk":
-            self.name = 
-        self.name = name 
-        return self.name
-
     def make_deposit(self, amount):
         self.account.deposit(amount)
         return self
@@ -62,5 +56,4 @@ class User:
 
 
 farouk = User("farouk", "ghezal", 24)
-malek = User("malek", "lazreg", 18)
-user_account(farouk).make_deposit(250).make_withdrawl(250).display_user_balance()
+farouk.make_deposit(250).make_withdrawl(250).display_user_balance()
