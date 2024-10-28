@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect, url_for # type: ignore
+from flask import Flask, render_template, request, session, redirect # type: ignore
 import random
 
 app = Flask(__name__)
@@ -21,15 +21,14 @@ def guess():
     elif user_guess > session['number']:
         hint = "too high!"
     else:
-        hint = f"Correct ! it took u {session['attemps']} attemps"
+        hint = f"Correct the guess  was {session['number']} ! it took u {session['attemps']} attemps"
 
     return render_template('index.html', hint=hint)
 
 @app.route('/reset')
 def reset():
-    session.pop('number', None)
-    session.pop('attemps', None)
-    return redirect(url_for('index'))
+    session.clear()
+    return redirect('/')
 
 
 if __name__ == '__main__':

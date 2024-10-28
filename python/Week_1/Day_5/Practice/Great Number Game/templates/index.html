@@ -14,13 +14,13 @@
             <h2>Guess the Number!</h2>
             <form  action="/guess" method="POST">
                 <input type="number" name="guess" required>
-                <button type="submit">Guess</button>
+                <button>Guess</button>
             </form>
             {% if hint %}
             <h3>{{ hint }}</h3>
             {% endif %}
             <form action="/reset" method="GET">
-                <button type="submit">Play Again</button>
+                <button>Play Again</button>
             </form>
         </div>
     </div>
