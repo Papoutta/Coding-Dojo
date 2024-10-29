@@ -1,0 +1,19 @@
+SELECT * FROM users.users;
+INSERT INTO users (first_name, last_name, email) 
+VALUES('farouk', 'ghezal', 'farouk@gmail.com'), 
+('yassine', 'kriaa', 'yassine@gmail.com'), 
+('achref', 'hadhri', 'achref@gmail.com');
+SELECT * FROM users;
+SELECT * FROM users where email = 'farouk@gmail.com';
+SELECT * FROM users where id = 3;
+
+UPDATE users
+SET last_name = 'Pancakes'
+WHERE id = 3;
+
+delete from users where id = 2;
+
+SELECT * FROM users order by  first_name;
+
+SELECT * FROM users order by  first_name DESC;
+
