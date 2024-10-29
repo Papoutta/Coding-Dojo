@@ -1,0 +1,4 @@
+SELECT * FROM names.names;
+insert into names (name)
+values ("farouk"), ("ahmed");
+# bonus : DELETE FROM names WHERE condition;
