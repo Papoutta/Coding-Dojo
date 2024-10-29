@@ -1,0 +1,22 @@
+SELECT * FROM dojos;
+INSERT INTO dojos (name) 
+VALUES('japan_dojo'), ('korean_dojo'), ('tunisian_dojo');
+DELETE FROM dojos where id > 0; 
+INSERT INTO dojos (name) 
+VALUES('japan_dojo'), ('korean_dojo'), ('tunisian_dojo');
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) 
+VALUES('ahmed', 'amri', '20',7), ('farouk', 'damergi', '20',7), ('raed', 'belgesem', '20',7);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) 
+VALUES('aziz', 'bali', '20',8), ('hedi', 'gharbi', '20',8), ('ismail', 'mzali', '20',8);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) 
+VALUES('farouk', 'ghezal', '20',9), ('achre', 'hadhri', '20',9), ('amine', 'haj salah', '20',9);
+SELECT * FROM ninjas WHERE dojo_id = 7;
+SELECT * FROM ninjas WHERE dojo_id = 9;
+SELECT * FROM ninjas ORDER BY id DESC LIMIT 1;
+
+SELECT * FROM ninjas
+JOIN dojos ON ninjas.dojo_id = dojos.id
+WHERE ninjas.id = 6;
+
+SELECT * FROM ninjas
+JOIN dojos ON ninjas.dojo_id = dojos.id
