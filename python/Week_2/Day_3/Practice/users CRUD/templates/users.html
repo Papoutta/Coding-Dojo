@@ -14,7 +14,7 @@
                 <th>Last name</th>
                 <th>Email</th>
                 <th>created_at</th>
-                <th>Delete</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -26,12 +26,9 @@
                 <th>{{user.created_at}}</th>
                 <td>
                     <div class="d-flex justify-content-around">
-                        <form action="" method="POST">
-                            <button class="btn btn-danger">Delete</button>
-                        </form>
-                        <form action="" method="GET">
-                            <button class="btn btn-warning">Update</button>
-                        </form>
+                        <button class="btn btn-dark"><a class="text-white text-decoration-none" href="/users/{{user.id}}">View</a></button>
+                        <button class="btn btn-danger"><a class="text-white text-decoration-none" href="/users/{{user.id}}/delete">Delete</a></button>
+                        <button class="btn btn-warning"><a class="text-white text-decoration-none" href="/users/{{user.id}}/edit">Edit</a></button>
                     </div>
                 </td>
             </tr>
@@ -39,7 +36,6 @@
         </tbody>
 
     </table>
-    <button class="btn btn-primary"><a class="text-white text-decoration-none" href="/user/new_user">Add User</a></button>
-
+    <button class="btn btn-primary"><a class="text-white text-decoration-none" href="/users/new_user">Add User</a></button>
 </body>
 </html>
