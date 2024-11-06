@@ -11,16 +11,16 @@ def index():
 def result():
     if request.method == 'POST':
         session['name'] = request.form['name']
-        session['email'] = request.form['email']
-        session['gender'] = request.form['gender']
-        session['hobbies'] = request.form.getlist('hobbies')  
+        session['location'] = request.form['location']
+        session['language'] = request.form['language']
+        session['comment'] = request.form['comment']
 
         return redirect('/display_result')
 
 @app.route('/display_result')
 def display_result():
-    return render_template('result.html', name=session.get('name'), email=session.get('email'),
-    gender=session.get('gender'), hobbies=session.get('hobbies'))
+    return render_template('result.html', name=session.get('name'), location=session.get('location'),
+    language=session.get('language'), comment=session.get('comment'))
 
 if __name__ == '__main__':
     app.run(debug=True)
