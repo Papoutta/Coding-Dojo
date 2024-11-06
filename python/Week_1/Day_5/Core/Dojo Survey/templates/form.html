@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <form method="POST" action="/result">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Hobbies:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="hobbies" value="reading">
+                <label class="form-check-label" for="reading">Reading</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="hobbies" value="traveling">
+                <label class="form-check-label" for="traveling">Traveling</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="hobbies" value="coding">
+                <label class="form-check-label" for="coding">Coding</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
