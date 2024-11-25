@@ -35,6 +35,9 @@ class User:
             return cls(result[0])
         return None
 
+
+
+
     @staticmethod
     def validate(data):
         is_valid = True
