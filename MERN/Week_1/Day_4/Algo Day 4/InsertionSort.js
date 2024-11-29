@@ -32,21 +32,15 @@
 // Return the sorted array.
 
 function insertionSort(arr) {
-    // Start from the second element (index 1)
     for (let i = 1; i < arr.length; i++) {
-        let temp = arr[i];  // Store the current element in a temporary variable
+        let temp = arr[i]; 
         let j;
-
-        // Use a for loop to move elements greater than temp to the right
         for (j = i - 1; j >= 0 && arr[j] > temp; j--) {
-            arr[j + 1] = arr[j];  // Shift the element to the right
+            arr[j + 1] = arr[j];  
         }
-
-        // Place the current element (temp) in its correct position
         arr[j + 1] = temp;
     }
-
-    return arr;  // Return the sorted array
+    return arr;
 }
 
 let arr = [5, 2, 9, 1, 5, 6];
