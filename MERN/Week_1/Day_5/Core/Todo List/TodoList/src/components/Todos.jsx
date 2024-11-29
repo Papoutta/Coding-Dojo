@@ -3,12 +3,13 @@ import React from 'react'
 const Todos = ({todos,updateTodos,deleteTodo}) => {
 
     return (
-    <div>
+    <div className='mt-5'>
+        <h1>Todos :</h1>
         {todos.map((todo,index)=> 
-        <div key={index} style={{display:"flex"}}>
+        <div className='mb-3 mt-4' key={index} style={{display:"flex", gap:"10px"}}>
             <h4 style={todo.status?{textDecoration: "line-through"}:{textDecoration: "none"}}>{todo.content}</h4>
             <input type="checkbox" checked={todo.status} onChange={(e)=>updateTodos(index)} />
-            <button onClick={()=>deleteTodo(index)}>Delete</button>
+            <button className='btn btn-dark' onClick={()=>deleteTodo(index)}>Delete</button>
         </div>)
         }
     </div>

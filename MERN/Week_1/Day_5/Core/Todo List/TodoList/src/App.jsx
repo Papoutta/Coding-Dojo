@@ -7,7 +7,8 @@ function App() {
   const [todos, setTodosList] = useState([])
 
   const addTodo = (todo) => {
-    setTodosList([...todos, todo])
+    todo.content.length > 0 ?
+    setTodosList([...todos, todo]): ""
   }
 
   const updateTodos = (index) => {
@@ -17,12 +18,12 @@ function App() {
   }
 
   const deleteTodo = (index) => {    
-    const filtredTodos = todos.filter((todos, idx) => idx != index)        
+    const filtredTodos = todos.filter((todo, idx) => idx != index)        
     setTodosList(filtredTodos)
   }
   return (
     <>
-      <h1>Add Your Plans for Today</h1>
+      <h1>Add Your Todos</h1>
       <Form addTodo={addTodo} />
       <Todos todos={todos} updateTodos={updateTodos} deleteTodo={deleteTodo} />
     </>
