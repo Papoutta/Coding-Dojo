@@ -6,7 +6,7 @@ function App() {
   const [axiosPokeball, setAxiosPokeball] = useState([]);
 
   useEffect(() => {
-    axios.get("https://pokeapi.co/api/v2/pokemon/?limit=810")
+    axios.get("https://pokeapi.co/api/v2/pokemon/?limit=151")
       .then(response => {
         console.log("AXIOS RESPONSE :", response.data);
         setAxiosPokeball(response.data.results);
