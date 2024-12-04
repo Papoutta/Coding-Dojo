@@ -20,11 +20,11 @@ function App() {
     <>
       <>
         <h1>Axios Pokémon Names</h1>
-        {axiosPokemon.map((pokemon, index) => (
-          <ul key={index}>
-            <li>{pokemon.name}</li>
-          </ul>
-        ))}
+        <ul key={index}>
+          {axiosPokemon.map((pokemon, index) => (
+              <li>{pokemon.name}</li>
+            ))}
+        </ul>
       </>
     </>
   );
