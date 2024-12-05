@@ -1,18 +1,24 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import AddBox from './components/AddBox'
+import Display from './components/Display'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [boxes, setBoxes] = useState([])
+  
+  const addnewbox=(obj)=>{
+    setBoxes([...boxes,obj])
+  }
+  const deletebox=(index)=>{
+    const filterboxes=boxes.filter((box,i)=>i != index)
+    setBoxes(filterboxes)
+  }
   return (
-    <>
-      <div>
-        <h1 className='text-center mt-5'>Box Genertor</h1>
-        
-      </div>
-    </>
+    <div>
+
+      <AddBox addnewbox={addnewbox}/>
+      <Display boxes={boxes } deletebox={deletebox}/>
+    </div>
   )
 }
 
