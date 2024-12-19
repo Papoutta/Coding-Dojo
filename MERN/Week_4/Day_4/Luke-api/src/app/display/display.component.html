@@ -1,0 +1,25 @@
+<div *ngIf="data.cat == 'people' " class="container  mt-5" style="width: 700px;">
+    <h2 class="text-center">Submitted Data</h2>
+    <div class="mt-5 p-5 border rounded shadow bg-light">
+        <h4 class="mb-3">{{item.name}}</h4>
+        <ul class="d-flex flex-column gap-3">
+        <li><b>Height:</b> {{item.height}}</li>
+        <li><b>Hair color:</b> {{item.hair_color}}</li>
+        <li><b>Eye Color:</b> {{item.eye_color}}</li>
+        <li><b>Skin Color:</b> {{item.skin_color}}</li>
+        </ul>
+    </div>
+</div>
+
+<div *ngIf="data.cat == 'planets' " class="container  mt-5" style="width: 700px;">
+    <h2 class="text-center">Submitted Data</h2>
+    <div class="mt-5 p-5 border rounded shadow bg-light">
+        <h4 class="mb-3">{{item.name}}</h4>
+        <ul class="d-flex flex-column gap-3">
+        <li><b>Climate:</b> {{item.climate}}</li>
+        <li><b>Terrain:</b> {{item.terrain}}</li>
+        <li><b>Surface Water:</b> {{item.surface_water}}</li>
+        <li><b>Population:</b> {{item.population}}</li>
+        </ul>
+    </div>
+</div>
