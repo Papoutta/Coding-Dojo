@@ -1,0 +1,40 @@
+<div class="container mt-5 mb-5 col-md-6">
+    <form #dataForm="ngForm" (ngSubmit)="onSubmit(dataForm.value)" class="p-4 border rounded shadow-sm bg-light">
+        <h3 class="mb-4 text-center">Submit Your Details</h3>
+        
+        <div class="mb-3">
+            <label for="name" class="form-label">Product Name:</label>
+            <input id="name" name="name" ngModel required type="text" class="form-control" placeholder="Enter your product name">
+        </div>
+
+        <div class="mb-3 col-md-6">
+            <label for="rating" class="form-label">Rating:</label>
+            <input id="rating" name="rating" ngModel required type="number" class="form-control" placeholder="Enter your rating">
+        </div>
+
+        <div class="mb-3">
+            <label for="feedback" class="form-label">Feedback:</label>
+            <textarea id="feedback" name="feedback" ngModel required type="number" class="form-control" placeholder="Give us your feedback"></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input id="email" name="email" ngModel required type="email" class="form-control" placeholder="Enter your email address"
+            >
+        </div>
+        
+        <div class="mb-3 ">
+            <label class="pe-4" for="recommand">Would you recommand ?</label>
+            <div class="form-check form-check-inline">
+                <input ngModel value="true" class="form-check-input" type="radio" name="recommand" id="yes">
+                <label class="form-check-label" for="inlineRadioDefault">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input ngModel value="false" class="form-check-input" type="radio" name="recommand" id="no">
+                <label class="form-check-label" for="inlineRadioChecked">No</label>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
