@@ -132,7 +132,51 @@ insertAtBackRecursive(data, runner = this.head) {
     //return the result array
     return arr;
   }
+
+  length(){
+    let runner = this.head
+    let length = 0
+    while (runner !== null) {
+      length++
+      runner=runner.next
+    }
+    return length
+  }
+  
+  insertAtFront(data){
+      const newNode = new Node(data)
+      newNode.next = this.head
+      this.head = newNode
+      return this
+  
+  }
+  
+  removeHead(){
+    const oldHead = this.head
+    if (this.isEmpty()){
+      return null
+    }
+    else{
+      this.head=this.head.next
+    }
+    return oldHead.data
+  }
+
+
+  average(){
+    let runner = this.head
+    let sum = 0
+    let count = 0
+    while (runner !== null) {
+      sum = summer + runner.data
+      count++
+      runner = runner.next
+    }
+    return sum/count
+  }
+
 }
+
 
 const emptyList = new SinglyLinkedList();
 
@@ -145,10 +189,12 @@ const unorderedList = new SinglyLinkedList().insertAtBackMany([
 ]);
 
 /* node 4 connects to node 1, back to head */
-// TODO: your code here
+const perfectLoopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
+perfectLoopList.head.next.next.next = perfectLoopList.head;
 
 /* node 4 connects to node 2 */
-// TODO: your code here
+const loopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
+loopList.head.next.next.next = loopList.head.next;
 
 const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
   1, 1, 1, 2, 3, 3, 4, 5, 5,
