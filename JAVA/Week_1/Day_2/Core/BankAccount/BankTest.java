@@ -7,16 +7,18 @@ public class BankTest {
 
         // Deposit
         account1.deposit(100.0, "checking");
-        account2.deposit(200.0, "savings");
-        account3.deposit(50.0, "checking");
+        account1.deposit(100.0, "savings");
+        // account2.deposit(200.0, "savings");
+        // account3.deposit(50.0, "checking");
         // Withdrawal
         account1.withdraw(30.0, "checking");
-        account2.withdraw(50.0, "savings");
-        account3.withdraw(80.0, "savings");
+        account1.withdraw(50.0, "savings");
+        // account2.withdraw(50.0, "savings");
+        // account3.withdraw(80.0, "savings");
         // Static
-        System.out.println("Number of bank accounts: " + BankAccount.getAccounts());
-        System.out.println("Total money across all accounts: $" + BankAccount.getTotalMoney());
-        System.out.println("Get Account : \n" + account1.getAccountNumber());
-        System.out.println("Get Account : \n" + new BankAccount().generateAccountNumber());
+        System.out.println("\nNumber of bank accounts: " + BankAccount.getAccounts());
+        System.out.println("\nTotal money across all accounts: $" + BankAccount.getTotalMoney());
+        System.out.println("\nGet account1 number: " + account1.getAccountNumber());
+        System.out.println("\nGet new Account number : " + new BankAccount().generateAccountNumber());
     }
 }

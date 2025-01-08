@@ -4,14 +4,16 @@ public class BankAccount {
     // MEMBER VARIABLES
     private double checkingBalance;
     private double savingsBalance;
-    private static int accounts = 0;
-    private static double totalMoney = 0;
+    private static int accounts;
+    private static double totalMoney;
     private final String accountNumber;
 
     // CONSTRUCTOR
     public BankAccount() {
-        this.checkingBalance = 0;
-        this.savingsBalance = 0;
+        this.checkingBalance = checkingBalance;
+        this.savingsBalance = savingsBalance;
+        this.accounts = 0;
+        this.totalMoney = totalMoney;
         this.accountNumber = generateAccountNumber();
         accounts++;
     }
@@ -51,7 +53,7 @@ public class BankAccount {
         displayBalance();
     }
     public void displayBalance() {
-        System.out.println("Checking Balance: $" + checkingBalance);
+        System.out.println("\nChecking Balance: $" + checkingBalance);
         System.out.println("Savings Balance: $" + savingsBalance);
         System.out.println("Total Balance: $" + (checkingBalance + savingsBalance));
     }
