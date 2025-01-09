@@ -175,6 +175,42 @@ insertAtBackRecursive(data, runner = this.head) {
     return sum/count
   }
 
+  removeBack(){
+    let runner = this.head
+    let removed = runner.data
+    if (this.isEmpty()){
+      return null
+    }
+    if(this.length()==1){
+      return this.removeHead() 
+    }
+    else {
+      while (runner.next.next) {
+        runner = runner.next
+        console.log(runner.data);
+        
+      }
+      removed = runner.next
+      runner.next = null
+    }
+    return removed.data
+  }
+
+  contains(val){
+    let runner = this.head
+    while (runner !== val) {
+      runner = runner.next
+    }
+  }
+
+  containsRecursive(val, current = this.head){
+
+  }
+
+  recursiveMax(runner = this.head, maxNode = this.head){
+
+  }
+
 }
 
 
@@ -201,4 +237,11 @@ const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
 ]);
 
 // Print your list like so:
-console.log(sortedDupeList.toArr());
+// console.log(sortedDupeList.toArr());
+
+//Testing the functions
+const testList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4, 5]);
+
+//Test removeBack
+const removedBack = testList.removeBack();
+console.log("after removeBack()" , testList.toArr(), "removed back data", removedBack);
