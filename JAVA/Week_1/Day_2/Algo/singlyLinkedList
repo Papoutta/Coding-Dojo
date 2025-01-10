@@ -186,9 +186,7 @@ insertAtBackRecursive(data, runner = this.head) {
     }
     else {
       while (runner.next.next) {
-        runner = runner.next
-        console.log(runner.data);
-        
+        runner = runner.next        
       }
       removed = runner.next
       runner.next = null
@@ -209,6 +207,45 @@ insertAtBackRecursive(data, runner = this.head) {
 
   recursiveMax(runner = this.head, maxNode = this.head){
 
+  }
+
+
+  secondToLast(){
+    let runner = this.head
+    if (this.isEmpty() || this.length()==1){
+      return null
+    }
+    else {
+      while (runner.next) {
+        runner = runner.next
+      }
+    }
+    return runner.data
+  }
+
+  removeVal(val){
+    // return true if target found and false if not
+    let runner = this.head
+    if (this.isEmpty()){
+      return false
+    }
+    if (val == runner.data) {
+      this.removeHead()
+      return true
+    }
+    while (runner.next) {
+      if (runner.next.data == val) {
+        runner.next = runner.next.next
+        return true
+      }
+      runner = runner.next
+    }
+    return false
+
+  }
+
+  prepend(newVal, targetVal){
+    //return true if target found and false if not
   }
 
 }
@@ -240,8 +277,17 @@ const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
 // console.log(sortedDupeList.toArr());
 
 //Testing the functions
-const testList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4, 5]);
+const testList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4, 5, 6]);
 
 //Test removeBack
-const removedBack = testList.removeBack();
-console.log("after removeBack()" , testList.toArr(), "removed back data", removedBack);
+// const removedBack = testList.removeBack();
+// console.log("after removeBack()" , testList.toArr(), "removed back data", removedBack);
+
+// //Test second to last
+// const secondToLastData = testList.secondToLast()
+// console.log("Second to last node data:", secondToLastData);
+
+//Test removeVal
+const removeVal = testList.removeVal(6)
+console.log("removeVal:", removeVal);
+console.log(testList.toArr());
