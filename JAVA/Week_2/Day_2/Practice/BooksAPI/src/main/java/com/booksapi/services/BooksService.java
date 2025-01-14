@@ -43,4 +43,13 @@ public class BooksService {
     	bookRepo.deleteById(id);
     	 return "deleted";
     }
+    
+    public BooksModel findBook(Long id) {
+        Optional<BooksModel> optionalBook = bookRepo.findById(id);
+        if(optionalBook.isPresent()) {
+            return optionalBook.get();
+        } else {
+            return null;
+     }
+    }
 }
