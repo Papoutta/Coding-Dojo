@@ -19,13 +19,18 @@ public class BooksAPIController {
         return bookService.allBooks();
     }
     
-    @PostMapping("/api/books")
-    public BooksModel create(@RequestParam(value="title") String title, @RequestParam(value="description") String desc, @RequestParam(value="language") String lang, @RequestParam(value="numberOfPages") Integer numOfPages) {
+    @PostMapping(value="/api/books")
+    public BooksModel create(
+    		@PathVariable("id") Long id,
+    		@RequestParam(value="title") String title, 
+    		@RequestParam(value="description") String desc, 
+    		@RequestParam(value="language") String lang, 
+    		@RequestParam(value="numberOfPages") Integer numOfPages) {
     	BooksModel book = new BooksModel(title, desc, lang, numOfPages);
         return bookService.createBook(book);
     }
 	
-    @PutMapping("/api/books/{id}")
+    @PutMapping(value="/api/books/{id}")
     public BooksModel update(
     		@PathVariable("id") Long id, 
     		@RequestParam(value="title") String title, 
