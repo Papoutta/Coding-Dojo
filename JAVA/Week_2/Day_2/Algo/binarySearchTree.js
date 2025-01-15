@@ -127,7 +127,53 @@ class BinarySearchTree {
       return this.maxRecursive(current)
     }
     return current.data
-  }  
+  } 
+  
+  contains(searchVal){
+    //initialise current to first node
+    let current = this.root
+    if (this.isEmpty()) {
+      // if true
+      return false
+    }
+    // Loop through the tree while 
+    while (current) {
+      if (current.data == searchVal) {
+        // if true
+        return true
+      }
+      //If searchVal is higher than the data of current, we go to the right of the tree
+      if(searchVal < current.data) {
+        //else, we go to the left
+        current = current.left
+      }
+      if (searchVal > current.data) {
+        current = current.right
+      }
+      
+    }
+    // If searchVal was not found return false
+    return false
+
+  }
+
+  containsRecusrsive(searchVal, current = this.root){
+
+  }
+
+  range(current = this.node){
+    if (this.isEmpty()){
+      return null
+    }
+    return this.max(startNode)-this.min(startNode)
+  }
+
+
+
+
+
+
+
 
   // Logs this tree horizontally with the root on the left.
   print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
@@ -147,25 +193,25 @@ class BinarySearchTree {
   }
 }
 
-const emptyTree = new BinarySearchTree();
-const oneNodeTree = new BinarySearchTree();
-oneNodeTree.root = new BSTNode(10);
-oneNodeTree.print()
-console.log("min of one node tree: ", oneNodeTree.minRecursive());
-console.log("max of one node tree: ", oneNodeTree.maxRecursive());
+// const emptyTree = new BinarySearchTree();
+// const oneNodeTree = new BinarySearchTree();
+// oneNodeTree.root = new BSTNode(10);
+// oneNodeTree.print()
+// console.log("min of one node tree: ", oneNodeTree.minRecursive());
+// console.log("max of one node tree: ", oneNodeTree.maxRecursive());
 /* twoLevelTree
         root
         10
       /   \
     5     15
 */
-const twoLevelTree = new BinarySearchTree();
-twoLevelTree.root = new BSTNode(10);
-twoLevelTree.root.left = new BSTNode(5);
-twoLevelTree.root.right = new BSTNode(15);
-twoLevelTree.print()
-console.log("min of two nodes tree: ", twoLevelTree.minRecursive());
-console.log("max of two nodes tree: ", twoLevelTree.maxRecursive());
+// const twoLevelTree = new BinarySearchTree();
+// twoLevelTree.root = new BSTNode(10);
+// twoLevelTree.root.left = new BSTNode(5);
+// twoLevelTree.root.right = new BSTNode(15);
+// twoLevelTree.print()
+// console.log("min of two nodes tree: ", twoLevelTree.minRecursive());
+// console.log("max of two nodes tree: ", twoLevelTree.maxRecursive());
 /* threeLevelTree 
         root
         10
@@ -182,7 +228,13 @@ threeLevelTree.root.left.right = new BSTNode(6);
 threeLevelTree.root.right = new BSTNode(15);
 threeLevelTree.root.right.left = new BSTNode(13);
 threeLevelTree.print()
-console.log("min of three nodes tree: ", threeLevelTree.minRecursive());
-console.log("max of three nodes tree: ", threeLevelTree.maxRecursive());
+// console.log("min of three nodes tree: ", threeLevelTree.minRecursive());
+// console.log("max of three nodes tree: ", threeLevelTree.maxRecursive());
 
+console.log("======== Testing 'contains' method ========");
+console.log(threeLevelTree.contains(15));
+console.log(threeLevelTree.contains(100));
 
+console.log(threeLevelTree.range());
+console.log(threeLevelTree.range(threeLevelTree.root.left));
+console.log(threeLevelTree.range(threeLevelTree.root.right));
