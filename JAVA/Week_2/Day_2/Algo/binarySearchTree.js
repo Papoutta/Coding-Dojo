@@ -147,7 +147,7 @@ class BinarySearchTree {
         //else, we go to the left
         current = current.left
       }
-      if (searchVal > current.data) {
+      else {
         current = current.right
       }
       
@@ -161,13 +161,60 @@ class BinarySearchTree {
 
   }
 
-  range(current = this.node){
-    if (this.isEmpty()){
-      return null
+range(startNode=this.root){
+    if(this.isEmpty()){
+      return null;
     }
-    return this.max(startNode)-this.min(startNode)
+    return (this.max(startNode))-(this.min(startNode));
   }
 
+  insert(newVal){
+    const newNode = new BSTNode(newVal)
+    if(this.isEmpty()){
+      this.root= newNode
+      return this
+    }
+    let current = this.root
+    while (true) {
+      if(newVal <= current.data) {
+        if (current.left === null) {
+          current.left = newNode
+          return this
+        }
+        current = current.left
+      }
+      if (newVal > current.data) {
+        if (current.right === null) {
+          current.right = newNode
+          return this      
+        }
+        current = current.right
+      }
+    }
+  }
+
+  insertRecursive(){
+    const newNode = new BSTNode(newVal)
+    if(this.isEmpty()){
+      this.root= newNode
+      return this
+    }
+    let current = this.root
+      if(newVal <= current.data) {
+        if (current.left === null) {
+          current.left = newNode
+          return this
+        }
+        current = current.left
+      }
+      if (newVal > current.data) {
+        if (current.right === null) {
+          current.right = newNode
+          return this      
+        }
+        current = current.right
+      }
+  }
 
 
 
@@ -220,21 +267,34 @@ class BinarySearchTree {
   / \    / \
 2   6  13  
 */
-const threeLevelTree = new BinarySearchTree();
-threeLevelTree.root = new BSTNode(10);
-threeLevelTree.root.left = new BSTNode(5);
-threeLevelTree.root.left.left = new BSTNode(2);
-threeLevelTree.root.left.right = new BSTNode(6);
-threeLevelTree.root.right = new BSTNode(15);
-threeLevelTree.root.right.left = new BSTNode(13);
-threeLevelTree.print()
+// const threeLevelTree = new BinarySearchTree();
+// threeLevelTree.root = new BSTNode(10);
+// threeLevelTree.root.left = new BSTNode(5);
+// threeLevelTree.root.left.left = new BSTNode(2);
+// threeLevelTree.root.left.right = new BSTNode(6);
+// threeLevelTree.root.right = new BSTNode(15);
+// threeLevelTree.root.right.left = new BSTNode(13);
+// threeLevelTree.print()
 // console.log("min of three nodes tree: ", threeLevelTree.minRecursive());
 // console.log("max of three nodes tree: ", threeLevelTree.maxRecursive());
 
-console.log("======== Testing 'contains' method ========");
-console.log(threeLevelTree.contains(15));
-console.log(threeLevelTree.contains(100));
+// console.log("======== Testing 'contains' method ========");
+// console.log(threeLevelTree.contains(15));
+// console.log(threeLevelTree.contains(100));
 
-console.log(threeLevelTree.range());
-console.log(threeLevelTree.range(threeLevelTree.root.left));
-console.log(threeLevelTree.range(threeLevelTree.root.right));
+// console.log(threeLevelTree.range());
+// console.log(threeLevelTree.range(threeLevelTree.root.left));
+// console.log(threeLevelTree.range(threeLevelTree.root.right));
+
+console.log("======== Testing 'Insert' method ========");
+const testTree = new BinarySearchTree()
+
+testTree.insert(10);
+testTree.insert(5);
+testTree.insert(15);
+testTree.insert(3);
+testTree.insert(7);
+testTree.insert(12);
+testTree.insert(17);
+console.log("test after using insert :");
+testTree.print();
