@@ -193,28 +193,30 @@ range(startNode=this.root){
     }
   }
 
-  insertRecursive(){
-    const newNode = new BSTNode(newVal)
-    if(this.isEmpty()){
-      this.root= newNode
-      return this
+  insertRecursive(newVal, current = this.root) {
+    const newNode = new BSTNode(newVal);
+  
+    if (this.isEmpty()) {
+      this.root = newNode;
+      return this;
     }
-    let current = this.root
-      if(newVal <= current.data) {
-        if (current.left === null) {
-          current.left = newNode
-          return this
-        }
-        current = current.left
+  
+    if (newVal <= current.data) {
+      if (current.left === null) {
+        current.left = newNode;
+        return this;
       }
-      if (newVal > current.data) {
-        if (current.right === null) {
-          current.right = newNode
-          return this      
-        }
-        current = current.right
+      return this.insertRecursive(newVal, current.left);
+    } else {
+      if (current.right === null) {
+        current.right = newNode;
+        return this;
+      } else {
+        return this.insertRecursive(newVal, current.right);
       }
+    }
   }
+  
 
 
 
@@ -286,15 +288,31 @@ range(startNode=this.root){
 // console.log(threeLevelTree.range(threeLevelTree.root.left));
 // console.log(threeLevelTree.range(threeLevelTree.root.right));
 
-console.log("======== Testing 'Insert' method ========");
-const testTree = new BinarySearchTree()
+// console.log("======== Testing 'Insert' method ========");
+// const testTree = new BinarySearchTree()
 
-testTree.insert(10);
-testTree.insert(5);
-testTree.insert(15);
-testTree.insert(3);
-testTree.insert(7);
-testTree.insert(12);
-testTree.insert(17);
-console.log("test after using insert :");
-testTree.print();
+// testTree.insert(10);
+// testTree.insert(5);
+// testTree.insert(15);
+// testTree.insert(3);
+// testTree.insert(7);
+// testTree.insert(12);
+// testTree.insert(17);
+// console.log("test after using insert :");
+// testTree.print();
+
+
+  // Create another tree for testing insertRecursive
+  const recursiveTree = new BinarySearchTree();
+  
+  // Test the insertRecursive method
+  console.log("\nTesting insertRecursive method...");
+  recursiveTree.insertRecursive(20);
+  recursiveTree.insertRecursive(10);
+  recursiveTree.insertRecursive(30);
+  recursiveTree.insertRecursive(5);
+  recursiveTree.insertRecursive(15);
+  recursiveTree.insertRecursive(25);
+  recursiveTree.insertRecursive(35);
+  console.log("Tree after using insertRecursive:");
+  recursiveTree.print();
