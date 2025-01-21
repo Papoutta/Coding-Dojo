@@ -218,12 +218,6 @@ range(startNode=this.root){
   }
   
 
-
-
-
-
-
-
   // Logs this tree horizontally with the root on the left.
   print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
     if (!node) {
@@ -240,7 +234,45 @@ range(startNode=this.root){
 
     this.print(node.left, spaceCnt);
   }
+
+
+  toArrPreorderRecursion(node = this.root, vals= []){
+    if (node) {
+    vals.push(node.data)
+    this.toArrPreorderRecursion(node.left,vals)
+    this.toArrPreorderRecursion(node.right,vals)
+    }
+    return vals
+  }
+
+  toArrInorder(node = this.root, vals= []){
+    if (node) {
+      this.toArrInorder(node.left,vals)
+      vals.push(node.data)
+      this.toArrInorder(node.right,vals)
+    }
+    return vals
+  }
+
+  toPostOrder(node = this.root, vals= []){
+    if (node) {
+      this.toPostOrder(node.left,vals)
+      this.toPostOrder(node.right,vals)
+      vals.push(node.data)
+    }
+    return vals
+  }
+
 }
+
+
+
+
+
+
+
+
+
 
 // const emptyTree = new BinarySearchTree();
 // const oneNodeTree = new BinarySearchTree();
@@ -302,17 +334,46 @@ range(startNode=this.root){
 // testTree.print();
 
 
-  // Create another tree for testing insertRecursive
-  const recursiveTree = new BinarySearchTree();
+  // // Create another tree for testing insertRecursive
+  // const recursiveTree = new BinarySearchTree();
   
-  // Test the insertRecursive method
-  console.log("\nTesting insertRecursive method...");
-  recursiveTree.insertRecursive(20);
-  recursiveTree.insertRecursive(10);
-  recursiveTree.insertRecursive(30);
-  recursiveTree.insertRecursive(5);
-  recursiveTree.insertRecursive(15);
-  recursiveTree.insertRecursive(25);
-  recursiveTree.insertRecursive(35);
-  console.log("Tree after using insertRecursive:");
-  recursiveTree.print();
+  // // Test the insertRecursive method
+  // console.log("\nTesting insertRecursive method...");
+  // recursiveTree.insertRecursive(20);
+  // recursiveTree.insertRecursive(10);
+  // recursiveTree.insertRecursive(30);
+  // recursiveTree.insertRecursive(5);
+  // recursiveTree.insertRecursive(15);
+  // recursiveTree.insertRecursive(25);
+  // recursiveTree.insertRecursive(35);
+  // console.log("Tree after using insertRecursive:");
+  // recursiveTree.print();
+
+  const bst = new BinarySearchTree();
+
+  bst.insert(25);
+  bst.insert(15);
+  bst.insert(50);
+  bst.insert(10);
+  bst.insert(22);
+  bst.insert(35);
+  bst.insert(70);
+  bst.insert(4);
+  bst.insert(12);
+  bst.insert(18);
+  bst.insert(24);
+  bst.insert(31);
+  bst.insert(44);
+  bst.insert(66);
+  bst.insert(90);
+  bst.print();
+
+  // const preorderResult = bst.toArrPreorderRecursion();
+  // console.log("DFS Preorder Traversal (CurrNode, Left, Right):",preorderResult);
+
+  // const inOrder = bst.toArrInorder();
+  // console.log("DFS Preorder Traversal (Left, Current, Right):",inOrder);
+
+  
+  const postOrder = bst.toPostOrder();
+  console.log("DFS Preorder Traversal (Left, Right, Current):",postOrder);
