@@ -19,7 +19,7 @@ public class UserService {
 	
 	 public User register(User newUser, BindingResult result) {
 	    	Optional<User> potentialUser = userRepo.findByEmail(newUser.getEmail());
-	        // TO-DO: Additional validations!
+	        // Additional validations!
 	    	if(potentialUser.isPresent()) {
 	    		result.rejectValue("email", "emailError", "Email already taken!");
 	    	}
@@ -37,9 +37,8 @@ public class UserService {
 	    }
 	    
 	    public User login(LoginUser newLoginObject, BindingResult result) {
-	        // TO-DO: Additional validations!
 	    	Optional<User> potentialUser = userRepo.findByEmail(newLoginObject.getEmail());
-	        // TO-DO: Additional validations!
+	        // Additional validations!
 	    	if(!potentialUser.isPresent()) {
 	    		result.rejectValue("email", "emailError", "Email doesn't Exist!");
 	    	}else {
